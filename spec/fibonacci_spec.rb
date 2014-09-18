@@ -17,7 +17,7 @@ describe Fibonacci do
     fibonacci = Fibonacci.new
 
     fibonacci_numbers.count.times do |i|
-      assert_equal fibonacci_numbers[i], fibonacci.nth_number(i + 1)
+      fibonacci.nth_number(i + 1).must_equal fibonacci_numbers[i]
     end
   end
 end
