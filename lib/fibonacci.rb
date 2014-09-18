@@ -6,7 +6,7 @@ class Fibonacci
   SECOND_FIB_NUM = 1
 
   def nth_number(fibonacci_index)
-    return 1 unless fibonacci_index > MIN_FIB_INDEX
+    return FIRST_FIB_NUM unless fibonacci_index > MIN_FIB_INDEX
     nth_number_helper(fibonacci_index)
   end
 
