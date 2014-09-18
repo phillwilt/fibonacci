@@ -16,7 +16,8 @@ class Fibonacci
     options ||= {
                   fib_num_back_one: SECOND_FIB_NUM,
                   fib_num_back_two: FIRST_FIB_NUM,
-                  current_index: 3 }
+                  current_index: 3
+                }
 
     current_fib_num = options.fetch(:fib_num_back_two) +
                       options.fetch(:fib_num_back_one)
