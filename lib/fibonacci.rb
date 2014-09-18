@@ -13,8 +13,7 @@ class Fibonacci
   private
 
   def nth_number_helper(fibonacci_index, options = nil)
-    options ||= {
-                  fib_num_back_one: SECOND_FIB_NUM,
+    options ||= { fib_num_back_one: SECOND_FIB_NUM,
                   fib_num_back_two: FIRST_FIB_NUM,
                   current_index: 3
                 }
