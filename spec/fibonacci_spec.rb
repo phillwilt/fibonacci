@@ -11,7 +11,7 @@ describe Fibonacci do
     fibonacci.nth_number(1).must_be_kind_of Numeric
   end
 
-  it 'returns correct Fibonacci numbers' do
+  it 'returns first 15 correct Fibonacci numbers' do
     fibonacci_numbers = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233,
                          377, 610]
     fibonacci = Fibonacci.new
