@@ -1,4 +1,5 @@
 Fibonacci
 ======
 
-Outputs the nth Fibonacci number
+Outputs the nth Fibonacci number using recursion
+
