@@ -1,33 +1,21 @@
 # fibonnaci.rb
 
 class Fibonacci
-  MIN_FIB_INDEX = 2
-  FIRST_FIB_NUM = 1
-  SECOND_FIB_NUM = 1
+  MIN_IDX = 2
+  FIRST_FIB = 1
+  SECOND_FIB = 1
 
-  def nth_number(fibonacci_index)
-    return FIRST_FIB_NUM unless fibonacci_index > MIN_FIB_INDEX
-    nth_number_helper(fibonacci_index)
+  def nth_number(fib_idx)
+    return FIRST_FIB unless fib_idx > MIN_IDX
+    nth_number_helper(fib_idx, MIN_IDX + 1, FIRST_FIB, SECOND_FIB)
   end
 
   private
 
-  def nth_number_helper(fibonacci_index, options = nil)
-    options ||= { fib_num_back_one: SECOND_FIB_NUM,
-                  fib_num_back_two: FIRST_FIB_NUM,
-                  current_index: 3
-                }
+  def nth_number_helper(fib_idx, curr_idx, fib_back_one, fib_back_two)
+    current_fib = fib_back_two + fib_back_one
 
-    current_fib_num = options.fetch(:fib_num_back_two) +
-                      options.fetch(:fib_num_back_one)
-
-    if options.fetch(:current_index) == fibonacci_index
-      current_fib_num
-    else
-      options[:current_index] += 1
-      options[:fib_num_back_two] = options.fetch(:fib_num_back_one)
-      options[:fib_num_back_one] = current_fib_num
-      nth_number_helper(fibonacci_index, options)
-    end
+    return current_fib if curr_idx == fib_idx
+    nth_number_helper(fib_idx, curr_idx + 1, current_fib, fib_back_one)
   end
 end
